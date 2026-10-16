@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <stdint.h>
+#include <stdio.h>
 
 __attribute__((noinline))
 void function(int a, int b, int c)
@@ -10,10 +10,10 @@ void function(int a, int b, int c)
     ret = (uintptr_t *)__builtin_frame_address(0);
 
     /* task 1: change 0 so ret points to the saved return address */
-    ret = ret + 0;
+    ret = ret + 1;
 
     /* task 2: change 0 to the number of instruction bytes to skip */
-    *ret = *ret + 0;
+    *ret = *ret + 7;
 }
 
 int main(void)
